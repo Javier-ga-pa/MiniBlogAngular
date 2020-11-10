@@ -1,0 +1,30 @@
+<div class="text-center">
+    <form class="form-signin" [formGroup]="frmLogin" (ngSubmit)="entrar()">
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Mi Blog - Entrar</h1>
+        <label for="inputEmail" class="sr-only">Nombre de usuario</label>
+        <input
+               formControlName="usuario"
+               type="text"
+               class="form-control"
+               placeholder="Introduzca su nombre de usuario"
+               required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input
+               formControlName="password"
+               type="password"
+               class="form-control"
+               placeholder="Introduzca su contraseña" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input
+                       formControlName="recordarme"
+                       type="checkbox"
+                       value="recordarme"> Recordarme
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+</div>

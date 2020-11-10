@@ -1,0 +1,20 @@
+<div *ngIf="!entrada" class="alert alert-info mt-3" role="alert">
+    <em>Cargando datos de entrada, un momento por favor...</em>
+</div>
+<div *ngIf="entrada" (click)="irAEntrada()"> 
+    <img class="card-img-top" [src]="entrada.url" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ entrada.titulo }}</h5>
+        <p class="card-text" *ngIf="!verEntradaCompleta">
+            {{ entrada.cuerpo.substring(0,100) }}... <span style="color:blue;"><em>(seguir leyendo)</em></span>
+        </p>
+        <div *ngIf="entrada.etiquetas">
+            <span class="badge badge-info mr-2" *ngFor="let etiqueta of entrada.etiquetas.split(',')">
+                {{ etiqueta }}
+            </span>
+        </div>        
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Fecha de creación de entrada: {{ entrada.fechaCreacion }}</small>
+    </div>
+</div>
